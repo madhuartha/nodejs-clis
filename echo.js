@@ -1,12 +1,11 @@
-#!/usr/bin/env node
+#!/usr/bin/env babel-node
+require('./helper');
 
-require('./helper')
-let fs = require('fs').promise
+
+let strPrint = require('yargs').argv 
 
 async function echo() {
-    // Use 'await' in here
-    // Your implementation here
-    console.log(await fs.readFile(__filename, console.log))
+	process.stdout.write(strPrint._[0]+"\n");
 }
 
 echo()
